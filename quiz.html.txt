@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>الأسئلة</title>
+  <style>
+    body {
+      background: #f5f5f5;
+      text-align: center;
+      font-size: 18px;
+      color: black;
+    }
+    .question {
+      margin: 20px;
+    }
+    button {
+      padding: 10px;
+      font-size: 18px;
+      background-color: gold;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <form id="quizForm">
+    <div id="questions"></div>
+    <button type="submit">إرسال</button>
+  </form>
+
+  <script>
+    const questions = [
+      "أستطيع التعرف على مشاعري بسهولة أثناء التدريس",
+      "ألاحظ مشاعر تلاميذي حتى لو لم يعبروا عنها بالكلمات",
+      "أستطيع تمييز الفروق بين المشاعر المختلفة التي أمر بها في خلال الحصة",
+      "أستطيع تمييز كيف تؤثر مشاعري الشخصية على تفاعلي مع التلاميذ واتخاذ خطوات لضبطها عند الحاجة",
+      "أفهم كيف يمكن أن تتطور المشاعر خلال المواقف المختلفة في القسم",
+      "أتمكن من تهدئة نفسي عندما أشعر بالغضب أو التوتر في القسم",
+      "أستطيع مساعدة التلاميذ على التحكم في مشاعرهم أثناء المواقف الصعبة",
+      "أتعامل مع مشاعر الإحباط أو الحزن لدى التلاميذ بطريقة فعالة",
+      "أستخدم عواطفي لتحفيز نفسي على تحسين جودة التدريس",
+      "أستطيع خلق جو تعليمي إيجابي باستخدام مشاعري الإيجابية",
+      "أستخدم الذكاء العاطفي لحل النزاعات بين التلاميذ بفعالية",
+      "أستطيع تعزيز مشاعر الثقة بالنفس لدى تلاميذي من خلال تعاطفي معهم",
+      "أستغل المشاعر الإيجابية لتعزيز تجربة التعلم لدى التلاميذ",
+      "أستمع بعمق لمشاعر التلاميذ وأمنحهم الشعور بأنهم مفهومون ومقدَّرون"
+    ];
+
+    const container = document.getElementById("questions");
+    questions.forEach((q, index) => {
+      container.innerHTML += `
+        <div class="question">
+          <p>${index + 1}. ${q}</p>
+          ${[1, 2, 3, 4, 5].map(num =>
+            `<label><input type="radio" name="q${index}" value="${num}" required> ${num}</label>`
+          ).join(" ")}
+        </div>`;
+    });
+
+    document.getElementById("quizForm").onsubmit = function (e) {
+      e.preventDefault();
+      let score = 0;
+      questions.forEach((_, i) => {
+        const val = document.querySelector(`input[name="q${i}"]:checked`);
+        score += Number(val.value);
+      });
+      const avg = score / questions.length;
+      localStorage.setItem("avgScore", avg);
+      window.location.href = "result.html";
+    };
+  </script>
+</body>
+</html>

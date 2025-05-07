@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>النتيجة</title>
+  <style>
+    body {
+      text-align: center;
+      background: #d1ecf1;
+      font-size: 24px;
+      color: #0c5460;
+    }
+    button {
+      margin-top: 30px;
+      font-size: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="result"></div>
+  <button onclick="document.getElementById('advice').style.display = 'block'">👀 عرض نصائح لتعزيز الذكاء العاطفي</button>
+  <div id="advice" style="display:none; margin-top: 20px; text-align: right; padding: 20px; background: white;">
+    🧠 <strong>إليك بعض النصائح العملية لتعزيز مهارات الذكاء العاطفي لديك</strong><br>
+    <strong>أولًا: وعي الذات</strong><br>
+    - تأمل المشاعر اليومية...<br>
+    <strong>🧘 ثانيًا: تنظيم الذات</strong><br>
+    - التنفس العميق...<br>
+    <strong>❤️ ثالثًا: التعاطف</strong><br>
+    - استمع بإنصات...<br>
+    <strong>🧑‍🤝‍🧑 رابعًا: المهارات الاجتماعية</strong><br>
+    - بناء علاقات إيجابية...<br>
+    <strong>🔋 خامسًا: التحفيز الذاتي</strong><br>
+    - ضع أهدافًا...<br>
+  </div>
+
+  <script>
+    const avg = parseFloat(localStorage.getItem("avgScore"));
+    let message = "";
+    if (avg >= 4) {
+      message = "👏 لديك ذكاء عاطفي عالي!";
+    } else if (avg >= 2.5) {
+      message = "🙂 أنت تؤدي بشكل جيد، لكن هناك مجال للنمو.";
+    } else {
+      message = "🧠 دعنا نعمل على تحسين ذكائك العاطفي!";
+    }
+    document.getElementById("result").innerText = message;
+  </script>
+</body>
+</html>

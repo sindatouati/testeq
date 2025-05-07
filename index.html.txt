@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>اختبار الذكاء العاطفي</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: gold;
+    }
+    .btn {
+      padding: 15px 30px;
+      margin: 20px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>اختبار الذكاء العاطفي للمعلمين</h1>
+  <button class="btn" onclick="location.href='about.html'">من نحن؟</button>
+  <button class="btn" onclick="location.href='welcome.html'">الإستقبال</button>
+</body>
+</html>

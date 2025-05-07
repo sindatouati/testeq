@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>الإستقبال</title>
+  <style>
+    body {
+      background-color: #fff3cd;
+      text-align: center;
+      color: #856404;
+      font-size: 22px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      font-size: 20px;
+      border-radius: 10px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <p>اختبار الذكاء العاطفي للمعلمين</p>
+  <p>مرحبًا بك في هذا الاختبار التفاعلي الذي يهدف إلى قياس مستوى الذكاء العاطفي لديك كمعلم. ستساعدك الأسئلة التالية على التعرف على قدراتك في إدارة مشاعرك وفهم مشاعر تلاميذك.</p>
+  <p>اضغط على زر البدء للانطلاق!</p>
+  <button onclick="location.href='quiz.html'">إبدأ الإختبار</button>
+</body>
+</html>
